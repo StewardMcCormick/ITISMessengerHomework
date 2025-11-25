@@ -2,58 +2,36 @@ package com.mccormick.User;
 //Made by alexkrug
 public class DataBase {
 
-    UserProfile user;
+    public int amountOfUsers = 1000; // Show how many users can be registered on our platform
 
-    public DataBase(UserProfile user){
-        this.user = user;
-        ArrayOfLogins[0] = new UserProfile("Egor Bessonov", "123");
-        ArrayOfLogins[1] = new UserProfile("Nikita Fomin", "IloveBeer");
-        ArrayOfLogins[2] = new UserProfile("alexkrug", "IloveDM");
-
-    }
-    public int AmountOfUsers = 1000; // Show how many users can be registered on our platform
-
-    private int NewUserCarriage = 3; // This carriage moves dynamically then new user registers
+    private int newUserCarriage = 3; // This carriage moves dynamically then new user registers
     //Init value == 3, because database already has 3 users
 
+    private User[] arrayOfLogins = new User[amountOfUsers];//Array of Users
 
-    private UserProfile[] ArrayOfLogins = new UserProfile[AmountOfUsers];//Array of Users
+    public DataBase() {
+        arrayOfLogins[0] = new User("Egor Bessonov", "123");
+        arrayOfLogins[1] = new User("Nikita Fomin", "IloveBeer");
+        arrayOfLogins[2] = new User("alexkrug", "IloveDM");
 
-
-    public void AddNewUser(){ // Add new User
-        ArrayOfLogins[NewUserCarriage] = user;
-        NewUserCarriage += 1;
     }
 
-    public int ShowCarriage(){ //Show how many Users have already registered
-        return NewUserCarriage;
-    }
-
-    public String IsUserInDataBase(){ //Search User in Database
-        String IsValidLogin = "I";               // There are two statements (I - Invalid, V - valid)
-        String IsValidPassword = "I";
-        for (int i = 0; i < NewUserCarriage; i++) {
-            if (ArrayOfLogins[i].UserName.equals(user.UserName)){
-                IsValidLogin = "V";
-                if (ArrayOfLogins[i].Password.equals(user.Password)){
-                    IsValidPassword = "V";
-                }
-                break;
-
+    public User getByName(String name) {
+        for (int i = 0; i < newUserCarriage; i++) {
+            if (arrayOfLogins[i].getUserName().equals(name)) {
+                return arrayOfLogins[i];
             }
         }
-
-
-        if (IsValidLogin.equals("I")){
-            return "UDE"; //(User don`t exist. It means, that new user is not registered)
-
-        }
-
-        if (IsValidLogin.equals("V") & IsValidPassword.equals("I")){
-            return "UE"; //(User exist, but password is incorrect)
-
-        }
-        return "UCPC"; //User is in database
+        return null;
     }
 
+    public boolean addNewUser(User user) { // Add new User
+        if (newUserCarriage < amountOfUsers) {
+            arrayOfLogins[newUserCarriage] = user;
+            newUserCarriage += 1;
+            return true;
+        }else {
+            return false;
+        }
+    }
 }
