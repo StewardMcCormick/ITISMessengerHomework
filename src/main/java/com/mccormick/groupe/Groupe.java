@@ -1,11 +1,11 @@
-package com.mccormick.group;
+package com.mccormick.groupe;
 
 import com.mccormick.User.User;
 import com.mccormick.message.Message;
 
 import java.util.List;
 
-public class Group {
+public class Groupe {
 
 	private String name;
 
@@ -13,7 +13,7 @@ public class Group {
 
 	private List<Message> messageList;
 
-	public Group(String name, User owner, List<Message> messageList) {
+	public Groupe(String name, User owner, List<Message> messageList) {
 		this.name = name;
 		this.owner = owner;
 		this.messageList = messageList;
