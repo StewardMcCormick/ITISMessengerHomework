@@ -7,7 +7,7 @@ import java.util.List;
 
 public class GroupDatabase {
 
-	private final List<Group> groupList;
+	private List<Group> groupList;
 
 	public GroupDatabase() {
 		groupList = List.of(
