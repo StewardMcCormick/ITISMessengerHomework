@@ -11,6 +11,8 @@ public class Chat {
 
 	private List<Message> messageList = new LinkedList<>();
 
+	public Chat() {}
+
 	public Chat(String name) {
 		this.name = name;
 	}
