@@ -32,4 +32,8 @@ public class Message {
     public User getReceiver() {
         return receiver;
     }
+
+    public String toString() {
+        return "[" + sender.getUserName() + " -> " + receiver.getUserName() + " | " + date + "] " + text;
+    }
 }
