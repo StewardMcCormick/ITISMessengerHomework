@@ -6,7 +6,7 @@ import com.mccormick.User.DataBase;
 import com.mccormick.User.User;
 
 public class Main {
-    public static void enterProcess(DataBase dataBase, Scanner scanner){
+    private static void enterProcess(DataBase dataBase, Scanner scanner){
         boolean flag = false;
         while (!flag){
             System.out.println("Enter your UserName, please");
