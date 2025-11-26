@@ -1,16 +1,31 @@
 package com.mccormick;
 
+import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
 import com.mccormick.User.DataBase;
 import com.mccormick.User.User;
+import com.mccormick.chat.Chat;
+import com.mccormick.chat.ChatDatabase;
 
 public class Main {
+
+    private final ChatDatabase chatDatabase = new ChatDatabase();
+
 	public static void main(String[] args) {
 		DataBase dataBase = new DataBase();
 		Scanner scanner = new Scanner(System.in);
 		enterProcess(dataBase, scanner);
 	}
+
+    private void printUserChatList(User user) {
+        List<Chat> chatList = chatDatabase.getAllChatByUser(user);
+
+        System.out.println("Your chats:\n");
+        for (Chat ch : chatList) {
+            System.out.println(ch.getName() + "\n");
+        }
+    }
 
     private static void enterProcess(DataBase dataBase, Scanner scanner){
         boolean flag = false;
