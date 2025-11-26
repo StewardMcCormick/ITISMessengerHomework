@@ -7,7 +7,7 @@ public class GroupChat extends Chat {
 	private User owner;
 
 	public GroupChat(String name, User owner) {
-		super(name);
+		super(owner, name);
 		this.owner = owner;
 	}
 

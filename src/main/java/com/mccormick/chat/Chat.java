@@ -14,13 +14,8 @@ public class Chat {
 
 	private List<Message> messageList = new LinkedList<>();
 
-	public Chat() {}
-
-	public Chat(String name) {
+	public Chat(User firstUser, String name) {
 		this.name = name;
-	}
-
-	public Chat(User firstUser) {
 		this.members.add(firstUser);
 	}
 

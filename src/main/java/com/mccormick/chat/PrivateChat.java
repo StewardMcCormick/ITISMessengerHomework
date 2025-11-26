@@ -4,13 +4,8 @@ import com.mccormick.User.User;
 
 public class PrivateChat extends Chat {
 
-	public PrivateChat(String name) {
-		super(name);
-	}
-
-	public PrivateChat(User user1, User user2) {
-		super();
-		this.members.add(user1);
+	public PrivateChat(User user1, User user2, String name) {
+		super(user1, name);
 		this.members.add(user2);
 	}
 }
