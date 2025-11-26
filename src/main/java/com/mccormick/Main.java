@@ -6,6 +6,12 @@ import com.mccormick.User.DataBase;
 import com.mccormick.User.User;
 
 public class Main {
+	public static void main(String[] args) {
+		DataBase dataBase = new DataBase();
+		Scanner scanner = new Scanner(System.in);
+		enterProcess(dataBase, scanner);
+	}
+
     private static void enterProcess(DataBase dataBase, Scanner scanner){
         boolean flag = false;
         while (!flag){
@@ -41,12 +47,4 @@ public class Main {
             }
         }
     }
-
-	public static void main(String[] args) {
-        DataBase dataBase = new DataBase();
-        Scanner scanner = new Scanner(System.in);
-        enterProcess(dataBase, scanner);
-
-
-	}
 }
