@@ -21,8 +21,8 @@ public class Main {
         List<Chat> chatList = chatDatabase.getAllChatByUser(user);
 
         System.out.println("Your chats:\n");
-        for (Chat ch : chatList) {
-            System.out.println(ch.getName() + "\n");
+        for (int i = 0; i < chatList.size(); i++) {
+            System.out.printf("%d. %s", i + 1, chatList.get(i).getName());
         }
     }
 
