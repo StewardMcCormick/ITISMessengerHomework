@@ -20,7 +20,7 @@ public class MessagesDatabase {
         List<Message> resultList = new ArrayList<>();
 
         for (Message m : messageList) {
-            if (m.getSender() == user) {
+            if (m.getSender().getUserName().equals(user.getUserName())) {
                 resultList.add(m);
             }
         }
@@ -32,7 +32,7 @@ public class MessagesDatabase {
         List<Message> resultList = new ArrayList<>();
 
         for (Message m : messageList) {
-            if (m.getReceiver() == user) {
+            if (m.getReceiver().getUserName().equals(user.getUserName())) {
                 resultList.add(m);
             }
         }
