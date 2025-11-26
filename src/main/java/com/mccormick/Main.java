@@ -1,7 +1,6 @@
 package com.mccormick;
 
 import java.util.List;
-import java.util.Locale;
 import java.util.Scanner;
 import com.mccormick.User.DataBase;
 import com.mccormick.User.User;
