@@ -1,22 +1,18 @@
-package com.mccormick.group;
+package com.mccormick.chat;
 
-import com.mccormick.User.User;
 import com.mccormick.message.Message;
 
+import java.util.LinkedList;
 import java.util.List;
 
-public class Group {
+public class Chat {
 
 	private String name;
 
-	private User owner;
+	private List<Message> messageList = new LinkedList<>();
 
-	private List<Message> messageList;
-
-	public Group(String name, User owner, List<Message> messageList) {
+	public Chat(String name) {
 		this.name = name;
-		this.owner = owner;
-		this.messageList = messageList;
 	}
 
 	public String getName() {
@@ -25,14 +21,6 @@ public class Group {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public User getOwner() {
-		return owner;
-	}
-
-	public void setOwner(User owner) {
-		this.owner = owner;
 	}
 
 	public List<Message> getMessageList() {
