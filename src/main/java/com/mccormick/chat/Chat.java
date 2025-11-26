@@ -1,5 +1,6 @@
 package com.mccormick.chat;
 
+import com.mccormick.User.User;
 import com.mccormick.message.Message;
 
 import java.util.LinkedList;
@@ -9,12 +10,18 @@ public class Chat {
 
 	private String name;
 
+	protected List<User> members;
+
 	private List<Message> messageList = new LinkedList<>();
 
 	public Chat() {}
 
 	public Chat(String name) {
 		this.name = name;
+	}
+
+	public Chat(User firstUser) {
+		this.members.add(firstUser);
 	}
 
 	public String getName() {

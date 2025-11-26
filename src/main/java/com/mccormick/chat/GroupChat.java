@@ -2,11 +2,7 @@ package com.mccormick.chat;
 
 import com.mccormick.User.User;
 
-import java.util.List;
-
 public class GroupChat extends Chat {
-
-	private List<User> members;
 
 	private User owner;
 
