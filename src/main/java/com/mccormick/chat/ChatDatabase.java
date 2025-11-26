@@ -6,7 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class ChatDatabase {
-	private List<Chat> chatList = new LinkedList<>();
+	private final List<Chat> chatList = new LinkedList<>();
 
 	public void addNewChat(Chat chat) {
 		this.chatList.add(chat);
