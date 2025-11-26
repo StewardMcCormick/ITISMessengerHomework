@@ -25,6 +25,14 @@ public class DataBase {
         return null;
     }
 
+    public User[] getUsers() {
+        User[] arrayOfUsers = new User[newUserCarriage];
+        for (int i = 0; i < newUserCarriage; i++) {
+            arrayOfUsers[i] = arrayOfLogins[i];
+        }
+        return arrayOfUsers;
+    }
+
     public boolean addNewUser(User user) { // Add new User
         if (newUserCarriage < amountOfUsers) {
             arrayOfLogins[newUserCarriage] = user;
